@@ -139,19 +139,19 @@ public class MovieService {
         return result;
     }
 
-    public String getAuthorFromMovie(String authorName){
-        List<Movies> movie = movieRepository.findByMovieAuthor(authorName);
-
-        if (!Objects.isNull(movie)) {
-            if (movie.get(0).getMovieCategory().equals(Category.HORROR)) {
-                return "It is not allowed to show movies from this author";
-            } else {
-                return movie.get(0).getAuthor().getAuthorName();
-            }
-        }
-        else {
-            return "There is no movie at all!";
-        }
-    }
+//    public String getAuthorFromMovie(String authorName){
+//        List<Movies> movie = movieRepository.findByMovieAuthor(authorName);
+//
+//        if (!Objects.isNull(movie)) {
+//            if (movie.get(0).getMovieCategory().equals(Category.HORROR)) {
+//                return "It is not allowed to show movies from this author";
+//            } else {
+//                return movie.get(0).getAuthor().getAuthorName();
+//            }
+//        }
+//        else {
+//            return "There is no movie at all!";
+//        }
+//    }
 
 }

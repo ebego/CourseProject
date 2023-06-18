@@ -51,42 +51,42 @@ public class MovieServiceTest {
         Assert.assertNull(foundMovie);
     }
 
-    @Test
-    public void getNullAuthorFromMovies() throws FileNukUGjetException {
-
-        when(movieRepository.findByMovieAuthor("Erdit Bego")).thenReturn(null);
-
-        String getAuthor = movieService.getAuthorFromMovie("Erdit Bego");
-
-        Assert.assertEquals("There is no movie at all!", getAuthor);
-
-    }
-
-    @Test
-    public void getAuthorFromMovies() throws FileNukUGjetException {
-
-        List<Movies> moviesList = new ArrayList<>();
-        moviesList.add(new Movies(1L," ", Category.HORROR,null,0.0,LocalDate.now(),null,null));
-
-        when(movieRepository.findByMovieAuthor("Erdit")).thenReturn(moviesList);
-
-        String result = movieService.getAuthorFromMovie("Erdit");
-
-        Assert.assertEquals("It is not allowed to show movies from this author", result);
-    }
-
-    @Test
-    public void getAuthorFromMoviesWhenAuthorMatches() throws FileNukUGjetException {
-
-        List<Movies> moviesList = new ArrayList<>();
-        moviesList.add(new Movies(1L," ", Category.DRAMA,new Author(1,"Erdit","Bego",29,"Shqiptar"),0.0,LocalDate.now(),null,null));
-
-        when(movieRepository.findByMovieAuthor("Erdit")).thenReturn(moviesList);
-
-        String result1 = movieService.getAuthorFromMovie("Erdit");
-
-        Assert.assertEquals("Erdit", result1);
-    }
-
+//    @Test
+//    public void getNullAuthorFromMovies() throws FileNukUGjetException {
+//
+//        when(movieRepository.findByMovieAuthor("Erdit Bego")).thenReturn(null);
+//
+//        String getAuthor = movieService.getAuthorFromMovie("Erdit Bego");
+//
+//        Assert.assertEquals("There is no movie at all!", getAuthor);
+//
+//    }
+//
+//    @Test
+//    public void getAuthorFromMovies() throws FileNukUGjetException {
+//
+//        List<Movies> moviesList = new ArrayList<>();
+//        moviesList.add(new Movies(1L," ", Category.HORROR,null,0.0,LocalDate.now(),null,null));
+//
+//        when(movieRepository.findByMovieAuthor("Erdit")).thenReturn(moviesList);
+//
+//        String result = movieService.getAuthorFromMovie("Erdit");
+//
+//        Assert.assertEquals("It is not allowed to show movies from this author", result);
+//    }
+//
+//    @Test
+//    public void getAuthorFromMoviesWhenAuthorMatches() throws FileNukUGjetException {
+//
+//        List<Movies> moviesList = new ArrayList<>();
+//        moviesList.add(new Movies(1L," ", Category.DRAMA,new Author(1,"Erdit","Bego",29,"Shqiptar"),0.0,LocalDate.now(),null,null));
+//
+//        when(movieRepository.findByMovieAuthor("Erdit")).thenReturn(moviesList);
+//
+//        String result1 = movieService.getAuthorFromMovie("Erdit");
+//
+//        Assert.assertEquals("Erdit", result1);
+//    }
+//
 
 }
